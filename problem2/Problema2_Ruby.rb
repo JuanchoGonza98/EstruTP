@@ -20,6 +20,8 @@ class Producto
   
   # Búsqueda binaria
   def busqueda_binaria(lista, clave)
+    raise "La lista está vacía." if lista.empty?
+  
     izquierda = 0
     derecha = lista.length - 1
   
@@ -33,16 +35,18 @@ class Producto
         derecha = medio - 1
       end
     end
-    nil
+  
+    raise "Producto '#{clave}' no encontrado."
   end
   
   # Pruebas
   clave = "Leche"
-  resultado = busqueda_binaria(productos, clave)
   
-  if resultado
+  begin
+    resultado = busqueda_binaria(productos, clave)
     puts "Producto encontrado: #{resultado.nombre}, Precio: #{resultado.precio}, Cantidad: #{resultado.cantidad}"
-  else
-    puts "Producto '#{clave}' no encontrado."
+  rescue => e
+    puts "Error: #{e.message}"
   end
+  
   

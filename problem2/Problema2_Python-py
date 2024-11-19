@@ -16,6 +16,9 @@ productos = [
 
 # Búsqueda binaria
 def busqueda_binaria(lista, clave):
+    if not lista:  # Manejar lista vacía
+        raise ValueError("La lista está vacía.")
+    
     izquierda = 0
     derecha = len(lista) - 1
 
@@ -27,13 +30,13 @@ def busqueda_binaria(lista, clave):
             izquierda = medio + 1
         else:
             derecha = medio - 1
-    return None
+
+    raise ValueError(f"Producto '{clave}' no encontrado.")
 
 # Pruebas
-clave = "Leche"
-resultado = busqueda_binaria(productos, clave)
-
-if resultado:
+try:
+    clave = "Leche"
+    resultado = busqueda_binaria(productos, clave)
     print(f"Producto encontrado: {resultado.nombre}, Precio: {resultado.precio}, Cantidad: {resultado.cantidad}")
-else:
-    print(f"Producto '{clave}' no encontrado.")
+except ValueError as e:
+    print(f"Error: {e}")

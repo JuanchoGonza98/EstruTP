@@ -19,11 +19,17 @@ class Program
 {
     static Producto BusquedaBinaria(List<Producto> lista, string clave)
     {
+        if (lista == null || lista.Count == 0)
+        {
+            throw new Exception("La lista está vacía.");
+        }
+
         int izquierda = 0, derecha = lista.Count - 1;
 
         while (izquierda <= derecha)
         {
             int medio = (izquierda + derecha) / 2;
+
             if (lista[medio].Nombre == clave)
             {
                 return lista[medio];
@@ -37,30 +43,32 @@ class Program
                 derecha = medio - 1;
             }
         }
-        return null;
+
+        throw new Exception($"Producto '{clave}' no encontrado.");
     }
 
     static void Main(string[] args)
     {
-        List<Producto> productos = new List<Producto>
+        try
         {
-            new Producto("Arroz", 50, 20),
-            new Producto("Harina", 30, 15),
-            new Producto("Leche", 60, 10),
-            new Producto("Pan", 40, 25),
-            new Producto("Queso", 100, 5)
-        };
+            List<Producto> productos = new List<Producto>
+            {
+                new Producto("Arroz", 50, 20),
+                new Producto("Harina", 30, 15),
+                new Producto("Leche", 60, 10),
+                new Producto("Pan", 40, 25),
+                new Producto("Queso", 100, 5)
+            };
 
-        string clave = "Leche";
-        Producto resultado = BusquedaBinaria(productos, clave);
+            string clave = "Leche";
+            Producto resultado = BusquedaBinaria(productos, clave);
 
-        if (resultado != null)
-        {
             Console.WriteLine($"Producto encontrado: {resultado.Nombre}, Precio: {resultado.Precio}, Cantidad: {resultado.Cantidad}");
         }
-        else
+        catch (Exception ex)
         {
-            Console.WriteLine($"Producto '{clave}' no encontrado.");
+            Console.WriteLine($"Error: {ex.Message}");
         }
     }
 }
+

@@ -9,6 +9,10 @@ productos <- list(
 
 # Búsqueda binaria
 busqueda_binaria <- function(lista, clave) {
+  if (length(lista) == 0) {
+    stop("La lista está vacía.")
+  }
+  
   izquierda <- 1
   derecha <- length(lista)
   
@@ -22,15 +26,19 @@ busqueda_binaria <- function(lista, clave) {
       derecha <- medio - 1
     }
   }
-  return(NULL)
+  stop(paste("Producto no encontrado:", clave))
 }
 
 # Pruebas
 clave <- "Leche"
-resultado <- busqueda_binaria(productos, clave)
+
+resultado <- tryCatch({
+  busqueda_binaria(productos, clave)
+}, error = function(e) {
+  cat("Error:", e$message, "\n")
+  NULL
+})
 
 if (!is.null(resultado)) {
   cat("Producto encontrado:", resultado$nombre, ", Precio:", resultado$precio, ", Cantidad:", resultado$cantidad, "\n")
-} else {
-  cat("Producto '", clave, "' no encontrado.\n", sep = "")
 }
