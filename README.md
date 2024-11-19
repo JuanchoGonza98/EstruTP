@@ -40,7 +40,7 @@ Cada solución se puede probar en plataformas en línea que soportan compilació
 ---
 
 ### **Ruby**
-1. Ve a [Replit](https://replit.com/) o [OnlineGDB](https://www.onlinegdb.com/online_ruby_compiler).
+1. Ve a [MyCompiler for Ruby](https://www.mycompiler.io/es/new/ruby).
 2. Crea un nuevo proyecto para Ruby.
 3. Copia y pega el código en el archivo principal.
 4. Ejecuta el programa haciendo clic en **Run**.
