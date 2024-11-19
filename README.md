@@ -33,7 +33,7 @@ Cada solución se puede probar en plataformas en línea que soportan compilació
 ---
 
 ### **R**
-1. Abre [Rextester](https://rextester.com/l/r_online_compiler).
+1. Abre [Rextester](https://www.mycompiler.io/es/new/r).
 2. Copia y pega el código en el editor.
 3. Haz clic en **Run** para ejecutar.
 4. Observa los resultados en la consola de salida.
