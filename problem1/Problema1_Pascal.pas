@@ -10,6 +10,9 @@ type
 var
   estudiantes: array of Estudiante;
 
+// Declarar el procedimiento Merge como forward
+procedure Merge(var lista: array of Estudiante; izquierda, medio, derecha: integer); forward;
+
 procedure MergeSort(var lista: array of Estudiante; izquierda, derecha: integer);
 var
   medio: integer;
