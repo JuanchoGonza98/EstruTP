@@ -1,8 +1,8 @@
 using System;
 
-class Program
+public class Program // La clase debe ser pública
 {
-    static int[,] MultiplicarMatrices(int[,] A, int[,] B)
+    public static int[,] MultiplicarMatrices(int[,] A, int[,] B)
     {
         int filasA = A.GetLength(0);
         int columnasA = A.GetLength(1);
@@ -33,23 +33,27 @@ class Program
         return resultado;
     }
 
-    static void Main(string[] args)
+    public static void Main(string[] args)
     {
         try
         {
+            // Matriz A
             int[,] A = {
                 { 1, 2, 3 },
                 { 4, 5, 6 }
             };
 
+            // Matriz B
             int[,] B = {
                 { 7, 8 },
                 { 9, 10 },
                 { 11, 12 }
             };
 
+            // Multiplicar matrices
             int[,] resultado = MultiplicarMatrices(A, B);
 
+            // Mostrar resultados
             Console.WriteLine("Resultado:");
             for (int i = 0; i < resultado.GetLength(0); i++)
             {
@@ -66,9 +70,3 @@ class Program
         }
     }
 }
-using MathNet.Numerics.LinearAlgebra;
-
-var matrixA = Matrix<double>.Build.DenseOfArray(new double[,] { { 1, 2, 3 }, { 4, 5, 6 } });
-var matrixB = Matrix<double>.Build.DenseOfArray(new double[,] { { 7, 8 }, { 9, 10 }, { 11, 12 } });
-var resultado = matrixA * matrixB;
-Console.WriteLine(resultado);
