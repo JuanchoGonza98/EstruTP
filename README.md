@@ -24,18 +24,17 @@ Cada solución se puede probar en plataformas en línea que soportan compilació
 ---
 
 ### **Python**
-1. Ve a [Replit](https://replit.com/).
-2. Crea un nuevo proyecto para Python.
-3. Copia y pega el código correspondiente al problema en un archivo `main.py`.
-4. Haz clic en **Run** para ejecutar el programa.
-5. Verifica los resultados en la consola.
+1. Ve a [MyCompiler for Python](https://www.mycompiler.io/es/new/python).
+2. Copia y pega el código correspondiente al problema.
+3. Haz clic en **Ejecute** para ejecutar el programa.
+4. Verifica los resultados en la consola.
 
 ---
 
 ### **R**
-1. Abre [Rextester](https://www.mycompiler.io/es/new/r).
+1. Abre [MyCompiler for R](https://www.mycompiler.io/es/new/r).
 2. Copia y pega el código en el editor.
-3. Haz clic en **Run** para ejecutar.
+3. Haz clic en **Ejecute** para ejecutar.
 4. Observa los resultados en la consola de salida.
 
 ---
