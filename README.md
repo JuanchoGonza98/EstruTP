@@ -49,7 +49,7 @@ Cada solución se puede probar en plataformas en línea que soportan compilació
 ---
 
 ### **C#**
-1. Abre [MyCompiler for C#](https://www.mycompiler.io/es/new/csharp).
+1. Abre [Dotnetfiddle](https://dotnetfiddle.net/).
 2. Copia y pega el código en el editor.
 3. Haz clic en **Ejecute** para compilar y ejecutar.
 4. Verifica los resultados en la consola de salida.
