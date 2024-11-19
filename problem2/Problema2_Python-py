@@ -1,0 +1,39 @@
+# Definición de la estructura
+class Producto:
+    def __init__(self, nombre, precio, cantidad):
+        self.nombre = nombre
+        self.precio = precio
+        self.cantidad = cantidad
+
+# Lista de registros (ordenada por nombre)
+productos = [
+    Producto("Arroz", 50, 20),
+    Producto("Harina", 30, 15),
+    Producto("Leche", 60, 10),
+    Producto("Pan", 40, 25),
+    Producto("Queso", 100, 5)
+]
+
+# Búsqueda binaria
+def busqueda_binaria(lista, clave):
+    izquierda = 0
+    derecha = len(lista) - 1
+
+    while izquierda <= derecha:
+        medio = (izquierda + derecha) // 2
+        if lista[medio].nombre == clave:
+            return lista[medio]
+        elif lista[medio].nombre < clave:
+            izquierda = medio + 1
+        else:
+            derecha = medio - 1
+    return None
+
+# Pruebas
+clave = "Leche"
+resultado = busqueda_binaria(productos, clave)
+
+if resultado:
+    print(f"Producto encontrado: {resultado.nombre}, Precio: {resultado.precio}, Cantidad: {resultado.cantidad}")
+else:
+    print(f"Producto '{clave}' no encontrado.")
